@@ -1,16 +1,9 @@
 language: php
-
 php:
-  - 7.2
   - 7.3
 
 before_script:
-  - composer install --prefer-dist --no-interaction
+  - composer install --no-interaction
 
-script: phpunit --configuration phpunit.xml --coverage-text
-
-notifications:
-  notifications:
-    email:
-      on_success: always
-      on_failure: always
+script:
+  - vendor/bin/phpunit
